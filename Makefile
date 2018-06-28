@@ -32,5 +32,5 @@ objs = $(patsubst %.cc,%o,$(srcs))
 
 .PHONY: compile
 compile:
-	g++ -g -Wall camera.cc icosahedron.cc main.cc nolight.cc facenormals.cc vkdevice.cc vkpipe.cc vkstrings.cc vkutils.cc -L/usr/lib/x86_64-linux-gnu -lglfw -lvulkan
+	g++ -g -Wall camera.cc icosahedron.cc geodesic_icos.cc main.cc nolight.cc facenormals.cc vkdevice.cc vkpipe.cc vkstrings.cc vkutils.cc -L/usr/lib/x86_64-linux-gnu -lglfw -lvulkan
   

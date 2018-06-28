@@ -19,7 +19,7 @@ void
 InitializeCameraState(
     CameraState *camera)
 {
-  camera->pos = glm::vec3(0, 0, -2);  // Camera position in world space.
+  camera->pos = glm::vec3(0, 0, -1.1);  // Camera position in world space.
   camera->dir = glm::vec3(0, 0, 1);   // and looks at the origin
   camera->up = glm::vec3(0, 1, 0);    // Head is up (set to 0,-1,0 to look upside-down)
   camera->wx = 0.0f;
@@ -43,7 +43,7 @@ ComputeCameraMatrix(
     CameraState const *camera,
     glm::mat4 *camera_matrix)
 {
-  float fov = M_PI / 6.0 ; //2*M_PI / 3.0;
+  float fov = M_PI / 3.0;
 
   *camera_matrix = 
       glm::perspective(fov, 1920.0f / 1080.0f, 0.0001f, 10.0f) *
@@ -56,8 +56,8 @@ ComputeCameraMatrix(
                 0.0f, -1.0f, 0.0f, 0.0f,
                 0.0f,  0.0f, 0.5f, 0.0f,
                 0.0f,  0.0f, 0.5f, 1.0f) *
-      glm::rotate(camera->wx, glm::vec3(0, 1, 0)) *
-      glm::rotate(camera->wy, glm::vec3(1, 0, 0));
+      glm::rotate(camera->wx, glm::vec3(1, 1, 0)) *
+      glm::rotate(camera->wy, glm::vec3(0, 1, 0));
       
 }
 
